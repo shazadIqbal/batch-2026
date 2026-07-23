@@ -21,12 +21,13 @@ public class StringLearning {
 
 
         String name = "Stepway";
+        char [] ch = name.toCharArray();
         System.out.println(name.length());
         System.out.println(name.charAt(3));
         System.out.println(name.contains("way"));
 
-        for(char ch : name.toCharArray()){
-            System.out.print(ch);
+        for(char chr : name.toCharArray()){
+            System.out.print(chr);
         }
 
 
