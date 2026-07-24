@@ -32,7 +32,7 @@ public class StringPractice {
         System.out.println(" b = "+b);
 
         /**
-         * How to merge new changes (main)
+         * How to merge new changes (main -> your branch)
          * 1) your branch should not have any changes (unstaged /staged files)
          * 2) checkout to main and pull (new changes arrive)
          * 3) checkout again to your branch (return back to your branch)
