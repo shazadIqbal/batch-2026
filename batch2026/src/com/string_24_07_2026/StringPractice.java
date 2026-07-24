@@ -22,6 +22,22 @@ public class StringPractice {
          * print a will be 10
          * print b will be 5
          */
+        int a = 5;
+        int b = 10;
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println(" a = "+a);
+        System.out.println(" b = "+b);
+
+        /**
+         * How to merge new changes (main -> your branch)
+         * 1) your branch should not have any changes (unstaged /staged files)
+         * 2) checkout to main and pull (new changes arrive)
+         * 3) checkout again to your branch (return back to your branch)
+         * 4) merge main into your branch
+         */
 
     }
 }
