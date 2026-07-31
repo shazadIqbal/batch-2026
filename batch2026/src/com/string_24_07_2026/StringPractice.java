@@ -1,7 +1,5 @@
 package com.string_24_07_2026;
 
-import com.static_25_07_2026.Mobile;
-
 public class StringPractice {
     public static void main(String[] args) {
         String s = "Hello"; //by literal
@@ -41,7 +39,7 @@ public class StringPractice {
          * 4) merge main into your branch
          */
 
-        Mobile m3 = new Mobile();
+//        Mobile m3 = new Mobile();
 
     }
 }

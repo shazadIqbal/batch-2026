@@ -26,5 +26,6 @@ public class ArrayUtil {
         for (int el : arr){
             System.out.print(el+" ");
         }
+        System.out.println();
     }
 }
