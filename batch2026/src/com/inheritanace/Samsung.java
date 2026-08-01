@@ -13,10 +13,25 @@ public class Samsung extends Mobile{
     @Override
     public void switchOn() {
         System.out.println("Hello Samsung");
+        connectBixbi();
     }
 
     @Override
     public void switchOff() {
         System.out.println("Good bye Samsung");
     }
+
+    @Override
+    public void unlock(Integer pin) {
+
+    }
+
+    private void connectBixbi(){
+        System.out.println("Connecting Bixbi");
+    }
+
+
+
+
+
 }

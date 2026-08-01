@@ -23,6 +23,23 @@ public class Mobile {
     }
 
 
+    public void unlock(Integer pin){
+        if(pin == 1234){
+            System.out.println("Unlocked");
+        }else{
+            System.out.println("Incorrect Pin");
+        }
+
+
+    }
+
+
+
+    private void displayImei(){
+        System.out.println("100M3BE-401120-23");
+    }
+
+
     @Override
     public String toString() {
         return "Mobile{" +
