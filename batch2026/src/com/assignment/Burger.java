@@ -7,9 +7,7 @@ public class Burger extends FoodItem{
     public Burger(String itemName, Boolean extraPatty) {
         super(itemName, 100.0);
         this.extraPatty = extraPatty;
-        if(extraPatty){
-            setBasePrice(getBasePrice()+250.0);
-        }
+
     }
 
     public Boolean getExtraPatty() {
@@ -22,12 +20,15 @@ public class Burger extends FoodItem{
 
     @Override
     public Double calculatePrice() {
+        if(extraPatty){
+            return getBasePrice()+250.0;
+        }
         return getBasePrice();
     }
 
     @Override
     public void displayDetails() {
-        System.out.print("Burger type is "+ getItemName() + " and price is "+ getBasePrice());
+        System.out.print("Burger type is "+ getItemName() + " and price is "+ calculatePrice());
         if(extraPatty){
             System.out.println(" with extra patty");
         }

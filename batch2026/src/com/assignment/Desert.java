@@ -6,9 +6,7 @@ public class Desert extends FoodItem{
     public Desert(String itemName, Integer qty) {
         super(itemName, 50.0);
         this.qty = qty;
-        if(qty > 2){
-            setBasePrice((getBasePrice() * getQty()) * 0.90);
-        }
+
     }
 
     public Integer getQty() {
@@ -21,12 +19,15 @@ public class Desert extends FoodItem{
 
     @Override
     public Double calculatePrice() {
+        if(qty > 2){
+            return (getBasePrice() * getQty()) * 0.90;
+        }
         return getBasePrice();
     }
 
     @Override
     public void displayDetails() {
         System.out.println("Dessert is "+ getItemName() + " and price is "
-                + getBasePrice() + "and quantity is " + getQty() );
+                + calculatePrice() + "and quantity is " + getQty() );
     }
 }
