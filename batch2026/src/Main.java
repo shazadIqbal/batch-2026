@@ -1,14 +1,12 @@
-import com.static_25_07_2026.Mobile;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Hello world");
-        Mobile m1 = new Mobile();
-        Mobile m2 = new Mobile();
-
-        System.out.println(Mobile.count);
+//
+//        System.out.println("Hello world");
+//        Mobile m1 = new Mobile();
+//        Mobile m2 = new Mobile();
+//
+//        System.out.println(Mobile.count);
     }
 }
