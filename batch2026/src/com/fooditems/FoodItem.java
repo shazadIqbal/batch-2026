@@ -5,7 +5,6 @@ public class FoodItem {
     private String itemName;
     private double basePrice;
 
-
     public FoodItem(String itemName, double basePrice) {
         this.itemName = itemName;
         this.basePrice = basePrice;
@@ -15,7 +14,7 @@ public class FoodItem {
         return itemName;
     }
 
-    public void setItemName(String itemName){
+    public void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
@@ -25,14 +24,15 @@ public class FoodItem {
 
     public void setBasePrice(double basePrice) {
         this.basePrice = basePrice;
-
-
-    }
-    public Double calculatePrice(){
-        return this.basePrice;
     }
 
-    public void displayDetails(){
-        System.out.println("Food item is"+this.itemName + "and the price is "+ this.basePrice);
+    public Double calculatePrice() {
+        return basePrice;
+    }
+
+    public void displayDetails() {
+        System.out.println("Item Name: " + itemName);
+        System.out.println("Base Price: " + basePrice);
+        System.out.println("Final Price: " + calculatePrice());
     }
 }

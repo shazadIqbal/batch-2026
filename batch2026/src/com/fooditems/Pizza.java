@@ -7,10 +7,6 @@ public class Pizza extends FoodItem {
     public Pizza(String itemName, boolean extraCheese) {
         super(itemName, 50);
         this.extraCheese = extraCheese;
-        if(extraCheese){
-            setBasePrice(getBasePrice()+ 200);
-        }
-
     }
 
     public boolean isExtraCheese() {
@@ -23,15 +19,28 @@ public class Pizza extends FoodItem {
 
     @Override
     public Double calculatePrice() {
-        return getBasePrice();
+
+        double price = getBasePrice();
+
+        if (extraCheese) {
+            price = price + 200;
+        }
+
+        return price;
     }
 
     @Override
     public void displayDetails() {
-        System.out.println("Food item is"+ getItemName() + "and the price is "+ getBasePrice());
 
-        if(extraCheese){
-            System.out.println("With extra cheese");;
+        System.out.println("Item Name: " + getItemName());
+        System.out.println("Base Price: " + getBasePrice());
+
+        if (extraCheese) {
+            System.out.println("Additional Details: Extra Cheese");
+        } else {
+            System.out.println("Additional Details: No Extra Cheese");
         }
+
+        System.out.println("Final Price: " + calculatePrice());
     }
 }

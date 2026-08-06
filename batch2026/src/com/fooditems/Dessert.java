@@ -1,15 +1,12 @@
 package com.fooditems;
 
-public class Dessert extends FoodItem{
+public class Dessert extends FoodItem {
 
     private Integer quantity;
 
     public Dessert(String itemName, Integer quantity) {
         super(itemName, 100);
         this.quantity = quantity;
-        if (quantity > 2){
-            setBasePrice(getBasePrice() * getQuantity() * 0.9);
-        }
     }
 
     public Integer getQuantity() {
@@ -22,12 +19,22 @@ public class Dessert extends FoodItem{
 
     @Override
     public Double calculatePrice() {
-        return getBasePrice();
+
+        double price = getBasePrice() * quantity;
+
+        if (quantity > 2) {
+            price = price * 0.90;
+        }
+
+        return price;
     }
 
     @Override
     public void displayDetails() {
-        System.out.println("The desert is " + getItemName()+ " price is "
-                + getBasePrice() + "and the quantity is "+ getQuantity());
+
+        System.out.println("Item Name: " + getItemName());
+        System.out.println("Base Price: " + getBasePrice());
+        System.out.println("Additional Details: Quantity = " + getQuantity());
+        System.out.println("Final Price: " + calculatePrice());
     }
 }

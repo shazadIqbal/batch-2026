@@ -7,12 +7,6 @@ public class Drink extends FoodItem {
     public Drink(String itemName, String size) {
         super(itemName, 20);
         this.size = size;
-
-        if (this.size.equalsIgnoreCase("Medium")){
-            setBasePrice(getBasePrice() + 40);
-        } else if (this.size.equalsIgnoreCase("Large")) {
-            setBasePrice(getBasePrice()+ 80);
-        }
     }
 
     public String getSize() {
@@ -25,11 +19,24 @@ public class Drink extends FoodItem {
 
     @Override
     public Double calculatePrice() {
-        return getBasePrice();
+
+        double price = getBasePrice();
+
+        if (size.equalsIgnoreCase("Medium")) {
+            price = price + 40;
+        } else if (size.equalsIgnoreCase("Large")) {
+            price = price + 80;
+        }
+
+        return price;
     }
 
     @Override
     public void displayDetails() {
-        System.out.println("Drink is"+ getItemName()+" and the price is " + getBasePrice() +"and the size is " + getSize());
+
+        System.out.println("Item Name: " + getItemName());
+        System.out.println("Base Price: " + getBasePrice());
+        System.out.println("Additional Details: Size = " + getSize());
+        System.out.println("Final Price: " + calculatePrice());
     }
 }
