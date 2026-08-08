@@ -14,7 +14,11 @@ public class Main {
             account = new SavingAccount("ABC","223344",0.0);
         }
         account.deposit(1000.0);
+        account.withdraw(100.0);
         System.out.println(account);
+
+        String str = "ABC";
+        str.toLowerCase();
 
 
     }
