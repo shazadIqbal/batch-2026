@@ -4,12 +4,16 @@ package com.abstraction;
 //class - class -> extends
 //class - interface -> implements
 // interface - interface -> extends
-public abstract class Animal implements DesignDevice {
+public class Animal {
 
     public Animal() {
         System.out.println("In Abstract Constructor");
     }
 
-    public abstract void sound();
+    public void sound(){
+        System.out.println("Animal Sound");
+    }
+
+
 
 }

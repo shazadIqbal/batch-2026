@@ -1,6 +1,7 @@
 package com.abstraction;
 
 public class Mobile implements ElectronicDevice,DesignDevice{
+
     @Override
     public void switchOn() {
 
