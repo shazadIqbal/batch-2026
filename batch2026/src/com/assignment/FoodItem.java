@@ -1,8 +1,8 @@
 package com.assignment;
 
-public class FoodItem {
+public  class FoodItem {
 
-    private String itemName;
+    private  String itemName;
     private Double basePrice;
 
     public FoodItem() {
@@ -13,7 +13,7 @@ public class FoodItem {
         this.basePrice = basePrice;
     }
 
-    public String getItemName() {
+    public  String getItemName() {
         return itemName;
     }
 
@@ -29,7 +29,7 @@ public class FoodItem {
         this.basePrice = basePrice;
     }
 
-    public Double calculatePrice(){
+    public  Double calculatePrice(){
         return this.basePrice;
     }
 
