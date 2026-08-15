@@ -2,10 +2,10 @@ package com.abstraction_assignment;
 
 public abstract class Payment {
 
-    private int paymentId;
-    private double amount;
+    private String paymentId;
+    private Double amount;
 
-    public Payment(Integer paymentId, double amount) {
+    public Payment(String paymentId, Double amount) {
         this.paymentId = paymentId;
         this.amount = amount;
     }
@@ -13,34 +13,28 @@ public abstract class Payment {
     public Payment() {
     }
 
-    public Integer getPaymentId() {
+    public String getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(Integer paymentId) {
+    public void setPaymentId(String paymentId) {
         this.paymentId = paymentId;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public void displayPaymentDetails() {
-        System.out.println("Payment ID: " + paymentId);
-        System.out.println("Amount: " + amount);
+    public void displayDetails(){
+        System.out.println("Payment Id : "+this.paymentId);
+        System.out.println("Amount : "+this.amount);
     }
 
     public abstract void processPayment();
 
-    @Override
-    public String toString() {
-        return "PaymentSystem{" +
-                "paymentId=" + paymentId +
-                ", amount=" + amount +
-                '}';
-    }
+
 }
