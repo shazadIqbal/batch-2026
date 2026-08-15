@@ -12,8 +12,9 @@ public class Samsung extends Mobile{
 
     @Override
     public void switchOn() {
+//        super.switchOn();
         System.out.println("Hello Samsung");
-        connectBixbi();
+//        this.connectBixbi();
     }
 
     @Override

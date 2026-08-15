@@ -33,8 +33,6 @@ public class Mobile {
 
     }
 
-
-
     private void displayImei(){
         System.out.println("100M3BE-401120-23");
     }
