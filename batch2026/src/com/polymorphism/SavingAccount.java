@@ -25,7 +25,7 @@ public class SavingAccount extends Account{
     }
 
     public void monthlyProfit(){
-        setBalance(getBalance() * 0.60);
+        setBalance(getBalance() * 1.60);
     }
 
     @Override

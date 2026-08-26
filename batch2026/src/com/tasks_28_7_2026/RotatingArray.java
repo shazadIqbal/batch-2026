@@ -18,7 +18,7 @@ public class RotatingArray {
             arr[0] = temp;
         }
         for(int el: arr){
-            System.out.println(el + "");
+            System.out.print(el+ " ");
         }
 
     }

@@ -20,8 +20,9 @@ public class Account {
     public void deposit(double amount) {
         if (amount >0) {
             balance += amount;
+        } else {
+            System.out.println("Incorrect amount");
         }
-        System.out.println("Incorrect amount");
     }
 
     public boolean withdraw(Double amount) {
