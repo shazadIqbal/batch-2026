@@ -56,6 +56,9 @@ public class Main {
                         es.updateEmployeeSalary(id3,salary2);
                         break;
 
+                    case 6 :
+                        Employee he = es.highestSalaryEmployee();
+                        System.out.println(he);
                     case 10:
                         System.exit(1);
                         break;
