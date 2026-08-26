@@ -111,4 +111,25 @@ public class Cinema {
         return new Customer(id,name,phone);
 
     }
+
+    public void viewAllBookings() {
+        for(Booking booking : this.bookingList){
+            System.out.println(booking);
+        }
+    }
+
+    public void viewBookingByCustomerPhone(String phone) {
+        boolean found = false;
+        for(Booking booking : this.bookingList){
+            if(phone.equalsIgnoreCase(booking.getCustomer().getPhoneNumber())){
+                System.out.println(booking);
+                found = true;
+            }
+        }
+
+        if(!found){
+            System.out.println("Booking not found");
+        }
+
+    }
 }
