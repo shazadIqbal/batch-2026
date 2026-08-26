@@ -4,16 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Flight flight = new Flight("PK101",FlightStatus.SCHEDULED);
+        int[] num1 = {1,2,3,0,0,0};
+        int[] num2 = {2,5,6};
+        int m = 3;
+        int n = 3;
+        //merge(num1,m,num2,n);
 
-        if(flight.getStatus().equals(FlightStatus.DEPARTED)){
-
+        for(int el : num1){
+            System.out.println(el);
         }
 
-        for(FlightStatus status : FlightStatus.values()){
-            System.out.println(status);
-        }
-
-        System.out.println(flight);
     }
+
 }
