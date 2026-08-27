@@ -1,12 +1,8 @@
-package com.movie_assignment;
-
-import org.jetbrains.annotations.NotNull;
+package movie_assignment;
 
 import java.util.Objects;
-import java.util.Set;
 
-public class Plane implements Comparable {
-
+public class Plane implements Comparable<Plane> {
     private String name;
 
     public Plane(String name) {
@@ -23,6 +19,7 @@ public class Plane implements Comparable {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Plane plane = (Plane) o;
         return Objects.equals(name, plane.name);
@@ -30,12 +27,14 @@ public class Plane implements Comparable {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(name);
+        return Objects.hash(name);
     }
 
     @Override
-    public int compareTo(@NotNull Object o) {
-        return 0;
+    public int compareTo(Plane o) {
+        if (o == null || o.name == null) return 1;
+        if (this.name == null) return -1;
+        return this.name.compareTo(o.name);
     }
 
     @Override
@@ -45,4 +44,3 @@ public class Plane implements Comparable {
                 '}';
     }
 }
-
