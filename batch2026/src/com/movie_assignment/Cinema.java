@@ -98,6 +98,22 @@ public class Cinema {
         }
     }
 
+    public void viewBookings(){
+        for(Booking booking : this.bookingList){
+            System.out.println(booking);
+        }
+    }
+
+
+    public void viewBookingByPhoneNumber(String phoneNumber) {
+        for (Booking booking : bookingList) {
+            if (booking.getCustomer().getPhoneNumber().equals(phoneNumber)) {
+                System.out.println(booking);
+            }
+        }
+    }
+
+
     public Customer createCustomer(Scanner scanner) {
         System.out.println("Please enter the id");
         Integer id = scanner.nextInt();

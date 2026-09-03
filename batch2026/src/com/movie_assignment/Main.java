@@ -18,7 +18,8 @@ public class Main {
             System.out.println("1) view all shows");
             System.out.println("2) make booking");
             System.out.println("3) view booking");
-            System.out.println("4) Exit");
+            System.out.println("4) view booking by phone number");
+            System.out.println("5) Exit");
 
             int input = scanner.nextInt();
 
@@ -37,9 +38,18 @@ public class Main {
 
 
                 case 3:
+                    cinema.viewBookings();
+                    break;
 
 
                 case 4:
+                    System.out.println("Please enter customer phone number:");
+                    String phoneNumber = scanner.next();
+                    cinema.viewBookingByPhoneNumber(phoneNumber);
+                    break;
+
+
+                case 5:
                     flag = false;
                     break;
 
