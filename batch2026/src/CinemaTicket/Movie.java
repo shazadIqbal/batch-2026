@@ -53,9 +53,15 @@ public class Movie {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
         Movie movie = (Movie) o;
-        return Objects.equals(id, movie.id) && Objects.equals(name, movie.name) && genre == movie.genre && Objects.equals(duration, movie.duration);
+
+        return Objects.equals(id, movie.id)
+                && Objects.equals(name, movie.name)
+                && genre == movie.genre
+                && Objects.equals(duration, movie.duration);
     }
 
     @Override
@@ -72,4 +78,4 @@ public class Movie {
                 ", duration=" + duration +
                 '}';
     }
-}
+} 

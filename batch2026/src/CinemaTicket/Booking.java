@@ -33,9 +33,13 @@ public class Booking {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
         Booking booking = (Booking) o;
-        return Objects.equals(show, booking.show) && Objects.equals(customer, booking.customer);
+
+        return Objects.equals(show, booking.show)
+                && Objects.equals(customer, booking.customer);
     }
 
     @Override

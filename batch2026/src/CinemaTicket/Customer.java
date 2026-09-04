@@ -8,11 +8,10 @@ public class Customer {
     private String name;
     private Integer phoneNumber;
 
-
-    public Customer(Integer id, String name, Integer phonenum) {
+    public Customer(Integer id, String name, Integer phoneNumber) {
         this.id = id;
         this.name = name;
-        this.phoneNumber = phonenum;
+        this.phoneNumber = phoneNumber;
     }
 
     public Integer getId() {
@@ -41,14 +40,17 @@ public class Customer {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
         Customer customer = (Customer) o;
-        return Objects.equals(id, customer.id) && Objects.equals(name, customer.name) && Objects.equals(phoneNumber, customer.phoneNumber);
+
+        return Objects.equals(id, customer.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, phoneNumber);
+        return Objects.hash(id);
     }
 
     @Override
@@ -56,7 +58,7 @@ public class Customer {
         return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", phonenum=" + phoneNumber +
+                ", phoneNumber=" + phoneNumber +
                 '}';
     }
 }
