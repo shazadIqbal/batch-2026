@@ -1,9 +1,11 @@
 package com.comparing;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Card {
+public class Card implements Comparable<Card>{
     private String name;
     private Integer number;
     private Integer cvv;
@@ -68,5 +70,10 @@ public class Card {
                 ", cvv=" + cvv +
                 ", expiry=" + expiry +
                 '}';
+    }
+
+    @Override
+    public int compareTo(@NotNull Card o) {
+        return this.cvv.compareTo(o.cvv);
     }
 }

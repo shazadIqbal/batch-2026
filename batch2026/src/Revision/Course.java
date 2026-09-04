@@ -1,15 +1,15 @@
-package com.revision;
-
-
-import org.jetbrains.annotations.NotNull;
+package Revision;
 
 import java.util.Objects;
 
-public class Student  implements Comparable<Student>{
+public class Course {
     private Integer id;
     private String name;
 
-    public Student(Integer id, String name) {
+    public Course() {
+    }
+
+    public Course(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -30,30 +30,23 @@ public class Student  implements Comparable<Student>{
         this.name = name;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equals(id, student.id) && Objects.equals(name, student.name);
+        Course course = (Course) o;
+        return Objects.equals(id, course.id) && Objects.equals(name, course.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name); // numeric number
+        return Objects.hash(id, name);
     }
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "Course{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
-    }
-
-
-    @Override
-    public int compareTo(@NotNull Student o) {
-        return o.getName().compareTo(this.name);
     }
 }
