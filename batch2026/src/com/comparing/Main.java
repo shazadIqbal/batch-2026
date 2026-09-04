@@ -27,7 +27,7 @@ public class Main {
 //
 //        cardList.forEach(c -> System.out.println(c));
 
-        Employee employee = new Employee(1,"TAHA", Status.ACTIVE);
+        //Employee employee = new Employee(1,"TAHA", Status.ACTIVE);
 
 
 

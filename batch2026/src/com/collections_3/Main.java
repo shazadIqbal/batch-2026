@@ -22,19 +22,19 @@ public class Main {
 //        }
 
 
-        Set<Employee> employeeSet = new TreeSet<>();
-
-        employeeSet.add(new Employee(1,"ALI"));
-        employeeSet.add(new Employee(1,"TAHA"));
-        employeeSet.add(new Employee(3,"AHMED"));
-        employeeSet.add(new Employee(4,"AHSAN"));
-        employeeSet.add(new Employee(1,"ALI"));
-        employeeSet.add(new Employee(5,"ADIL"));
-
-
-        for (Employee e : employeeSet){
-            System.out.println(e);
-        }
+//        Set<Employee> employeeSet = new TreeSet<>();
+//
+//        employeeSet.add(new Employee(1,"ALI"));
+//        employeeSet.add(new Employee(1,"TAHA"));
+//        employeeSet.add(new Employee(3,"AHMED"));
+//        employeeSet.add(new Employee(4,"AHSAN"));
+//        employeeSet.add(new Employee(1,"ALI"));
+//        employeeSet.add(new Employee(5,"ADIL"));
+//
+//
+//        for (Employee e : employeeSet){
+//            System.out.println(e);
+//        }
 
 
     }

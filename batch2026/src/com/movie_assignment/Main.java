@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+    // implement LinkedList ,
     public static void main(String[] args) {
 
         Cinema cinema = new Cinema();

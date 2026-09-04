@@ -1,21 +1,17 @@
 package com.revision;
 
-import java.util.List;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
-public class Student {
+public class Student  implements Comparable<Student>{
     private Integer id;
     private String name;
-    private List<Course> courseList;
 
-
-    public Student(Integer id, String name, List<Course> courseList) {
+    public Student(Integer id, String name) {
         this.id = id;
         this.name = name;
-        this.courseList = courseList;
-    }
-
-    public Student() {
     }
 
     public Integer getId() {
@@ -34,24 +30,17 @@ public class Student {
         this.name = name;
     }
 
-    public List<Course> getCourseList() {
-        return courseList;
-    }
-
-    public void setCourseList(List<Course> courseList) {
-        this.courseList = courseList;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(id, student.id) && Objects.equals(name, student.name) && Objects.equals(courseList, student.courseList);
+        return Objects.equals(id, student.id) && Objects.equals(name, student.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, courseList);
+        return Objects.hash(id, name); // numeric number
     }
 
     @Override
@@ -59,7 +48,12 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", courseList=" + courseList +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(@NotNull Student o) {
+        return o.getName().compareTo(this.name);
     }
 }
