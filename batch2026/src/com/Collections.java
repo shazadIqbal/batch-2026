@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Collections {
     public static void main(String[] args) {
+
         List<String> names = new ArrayList<>();
+
         names.add("Ali");
         names.add("Ahmed");
         names.add("Taha");

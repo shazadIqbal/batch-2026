@@ -1,4 +1,4 @@
-package com._03_09_26_Shops;
+package com.Shops_03_Sep;
 
 public enum PromotionType {
     FIXED,

@@ -1,3 +1,5 @@
+package com.Arrays;
+
 public class ReverseArray {
     public static void main(String[] args) {
         int[] arr = {1,2,4,7,4};

@@ -1,4 +1,6 @@
-public class StringFrequence {
+package com.Arrays;
+
+public class CharacterFrequency {
     public static void main(String[] args) {
 
         String word = "iteration";
