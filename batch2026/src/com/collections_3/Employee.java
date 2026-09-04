@@ -3,31 +3,12 @@ package com.collections_3;
 import java.util.Objects;
 
 public class Employee {
-    private Integer id;
     private String name;
-    private Status status;
+    private String department;
 
-
-    public Employee(Integer id, String name) {
-        this.id = id;
+    public Employee(String name, String department) {
         this.name = name;
-    }
-
-    public Employee(Integer id, String name, Status status) {
-        this.id = id;
-        this.name = name;
-        this.status = status;
-    }
-
-    public Employee() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+        this.department = department;
     }
 
     public String getName() {
@@ -38,26 +19,31 @@ public class Employee {
         this.name = name;
     }
 
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id) && Objects.equals(name, employee.name);
+        return Objects.equals(name, employee.name) && Objects.equals(department, employee.department);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(name, department);
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", department='" + department + '\'' +
                 '}';
     }
-
-
 }

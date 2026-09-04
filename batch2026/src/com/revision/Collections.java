@@ -57,11 +57,11 @@ public class Collections {
 
         List<Student> studentList = new ArrayList<>();
 
-        studentList.add(new Student(1,"Taha", Arrays.asList(english,urdu)));
-        studentList.add(new Student(2,"ALI",Arrays.asList(english,math)));
-        studentList.add(new Student(3,"Adil",new ArrayList<>()));
-        studentList.add(new Student(4,"Sami",Arrays.asList(science,urdu,english)));
-
+//        studentList.add(new Student(1,"Taha", Arrays.asList(english,urdu)));
+//        studentList.add(new Student(2,"ALI",Arrays.asList(english,math)));
+//        studentList.add(new Student(3,"Adil",new ArrayList<>()));
+//        studentList.add(new Student(4,"Sami",Arrays.asList(science,urdu,english)));
+//
 
         // -> lambda
         studentList.forEach(s -> System.out.println(s));

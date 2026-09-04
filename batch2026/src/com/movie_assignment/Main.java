@@ -3,6 +3,8 @@ package com.movie_assignment;
 import java.util.*;
 
 public class Main {
+
+    // implement LinkedList ,
     public static void main(String[] args) {
 
 //        Cinema cinema = new Cinema();
