@@ -10,6 +10,8 @@ public class Shop {
     private Floor floor;
     private List<Promotion> promotions; //class separate
 
+
+
     //promotrion code ( t20 fixed/flat, t20p - percentage - 20%off , null pormotion shop
     // , type - enum - fix/percenatge ,
 

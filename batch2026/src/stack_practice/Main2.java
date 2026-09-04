@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Main2 {
     public static void main(String[] args) {
 
-        //List of shop aur ismein promotion hgi 
+        //List of shop aur ismein promotion hgi
 
 //        List<Integer> list = List.of(1,8,2,11,2,4,5,21,33);
 //
