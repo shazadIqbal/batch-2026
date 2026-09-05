@@ -1,6 +1,5 @@
 package com.stream_practice;
 
-import com.abstraction.A;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -163,6 +162,10 @@ public class Stream2 {
 
         return  shopList.stream()
                 .anyMatch(s -> name.equalsIgnoreCase(s.getName()));
+
+    }
+
+    private static List<Promotion> getPromotionByShopName(List<Shop> shopList, String shopName){
 
     }
 
