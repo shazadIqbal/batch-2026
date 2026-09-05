@@ -73,6 +73,8 @@ public class Stream2 {
 //        }
 //        return result;
 
+        
+
         return shopList.stream()
                 .filter(s->Floor.GROUNDFLOOR.equals(s.getFloor()))
                 .collect(Collectors.toList());
