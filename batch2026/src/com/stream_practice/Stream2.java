@@ -1,9 +1,7 @@
 package com.stream_practice;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Stream2 {
@@ -45,21 +43,24 @@ public class Stream2 {
                 "D202",
                 ShopType.GARMENT,
                 Floor.FIRSTFLOOR,
-                Arrays.asList(promo4)));
+                Arrays.asList(promo2)));
 
 
-        List<String> shopNames = getShopNamesWithFloor(shopList,Floor.SECONDFLOOR);
+//        List<String> shopNames = getShopNamesWithFloor(shopList,Floor.SECONDFLOOR);
+//
+//        shopNames.forEach(System.out::println);
+//
+//        Shop shopName = getShopByShopName(shopList,"KFC");
+//
+//        String shopNumber = getShopNumberByShopName(shopList,"KFC");
+//
+//        System.out.println(shopNumber);
+//
+//        Long count = getShopCountByFloor(shopList,Floor.GROUNDFLOOR);
+//        System.out.println(count);
 
-        shopNames.forEach(System.out::println);
-
-        Shop shopName = getShopByShopName(shopList,"KFC");
-
-        String shopNumber = getShopNumberByShopName(shopList,"KFC");
-
-        System.out.println(shopNumber);
-
-        Long count = getShopCountByFloor(shopList,Floor.GROUNDFLOOR);
-        System.out.println(count);
+        Set<Promotion> result = getAllFixedPromotion(shopList);
+        result.forEach(System.out::println);
 
     }
 
@@ -165,9 +166,31 @@ public class Stream2 {
 
     }
 
-    private static List<Promotion> getPromotionByShopName(List<Shop> shopList, String shopName){
-
+    private static List<Promotion> getAllPromotionByShopName(List<Shop> shopList, String shopName){
+        List<Promotion> promotionList = new ArrayList<>();
+        for(Shop shop : shopList){
+            if(shopName.equalsIgnoreCase(shop.getName())){
+               promotionList.addAll(shop.getPromotionList());
+            }
+        }
+        return promotionList;
     }
+
+    private static Set<Promotion> getAllFixedPromotion(List<Shop> shopList){
+            Set<Promotion> promotionList = new HashSet<>();
+
+            for(Shop shop : shopList){
+                for(Promotion promo : shop.getPromotionList()){
+                    if(promo.getPromotionType().equals(PromotionType.FIXED)){
+                        promotionList.add(promo);
+                    }
+                }
+            }
+
+            return promotionList;
+    }
+
+
 
 
 
