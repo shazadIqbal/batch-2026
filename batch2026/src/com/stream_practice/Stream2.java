@@ -59,8 +59,11 @@ public class Stream2 {
 //        Long count = getShopCountByFloor(shopList,Floor.GROUNDFLOOR);
 //        System.out.println(count);
 
-        Set<Promotion> result = getAllFixedPromotion(shopList);
-        result.forEach(System.out::println);
+//        Set<Promotion> result = getAllFixedPromotion(shopList);
+//        result.forEach(System.out::println);
+//
+        List<String> result = getShopNamesForPromoType(shopList,PromotionType.PERCENTAGE);
+        System.out.println(result);;
 
     }
 
@@ -167,31 +170,81 @@ public class Stream2 {
     }
 
     private static List<Promotion> getAllPromotionByShopName(List<Shop> shopList, String shopName){
-        List<Promotion> promotionList = new ArrayList<>();
-        for(Shop shop : shopList){
-            if(shopName.equalsIgnoreCase(shop.getName())){
-               promotionList.addAll(shop.getPromotionList());
-            }
-        }
-        return promotionList;
+//        List<Promotion> promotionList = new ArrayList<>();
+//        for(Shop shop : shopList){
+//            if(shopName.equalsIgnoreCase(shop.getName())){
+//               promotionList.addAll(shop.getPromotionList());
+//            }
+//        }
+//        return promotionList;
+       // flatmap
+
+       return shopList.stream()
+               .filter(s->shopName.equalsIgnoreCase(s.getName()))
+               .flatMap(s->s.getPromotionList().stream())
+               .collect(Collectors.toList());
+
+
+
     }
 
     private static Set<Promotion> getAllFixedPromotion(List<Shop> shopList){
             Set<Promotion> promotionList = new HashSet<>();
 
-            for(Shop shop : shopList){
-                for(Promotion promo : shop.getPromotionList()){
-                    if(promo.getPromotionType().equals(PromotionType.FIXED)){
-                        promotionList.add(promo);
-                    }
-                }
-            }
+//            for(Shop shop : shopList){
+//                for(Promotion promo : shop.getPromotionList()){
+//                    if(promo.getPromotionType().equals(PromotionType.FIXED)){
+//                        promotionList.add(promo);
+//                    }
+//                }
+//            }
+//
+//            return promotionList;
 
-            return promotionList;
+            return shopList.stream()
+                    .flatMap(s->s.getPromotionList().stream())
+                    .filter(p->PromotionType.FIXED.equals(p.getPromotionType()))
+                    .collect(Collectors.toSet());
+
+
+    }
+
+
+    private static List<String> getShopNamesForPromoType(List<Shop> shopList , PromotionType promotionType){
+
+//        List<String> result = new ArrayList<>();
+//
+//        for(Shop shop : shopList){
+//            for (Promotion promotion : shop.getPromotionList()){
+//
+//                if(promotionType.equals(promotion.getPromotionType())){
+//                    result.add(shop.getName());
+//                    break;
+//                }
+//            }
+//
+//        }
+//
+//        return result;
+
+        return shopList
+                .stream()
+                .filter(s->s.getPromotionList().stream()
+                        .anyMatch(p->promotionType.equals(p.getPromotionType())))
+                .map(Shop::getName)
+                .collect(Collectors.toList());
+
+
     }
 
 
 
+
+    private static Map<Floor,Integer> countShopByFloors(List<Shop> shopList){
+
+
+
+    }
 
 
 
