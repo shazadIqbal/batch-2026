@@ -168,4 +168,6 @@ public class Main {
                 .map(Shop::getName)
                 .collect(Collectors.toList());
     }
+
+
 }
