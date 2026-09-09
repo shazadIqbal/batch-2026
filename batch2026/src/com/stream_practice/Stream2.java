@@ -62,8 +62,10 @@ public class Stream2 {
 //        Set<Promotion> result = getAllFixedPromotion(shopList);
 //        result.forEach(System.out::println);
 //
-        List<String> result = getShopNamesForPromoType(shopList,PromotionType.PERCENTAGE);
-        System.out.println(result);;
+//        List<String> result = getShopNamesForPromoType(shopList,PromotionType.PERCENTAGE);
+//        System.out.println(result);;
+        Map<Floor,Long> map = countShopByFloors(shopList);
+        System.out.println(map);
 
     }
 
@@ -240,11 +242,29 @@ public class Stream2 {
 
 
 
-    private static Map<Floor,Integer> countShopByFloors(List<Shop> shopList){
+    private static Map<Floor,Long> countShopByFloors(List<Shop> shopList){
 
+//            Map<Floor,Integer> map = new HashMap<>();
+//
+//            for(Shop shop:shopList){
+//                   map.put(shop.getFloor(),
+//                           map.getOrDefault(shop.getFloor(),0)+1);
+//            }
+//
+//            return map;
+
+        //groupingBy(Key,,new LinkedHashMap,Value) , partioningBy
+
+        return shopList
+                .stream()
+                .collect(Collectors
+                        //.groupingBy(Shop::getFloor,LinkedHashMap::new,Collectors.counting()));
+                        .groupingBy(Shop::getFloor,Collectors.counting()));
 
 
     }
+
+
 
 
 
