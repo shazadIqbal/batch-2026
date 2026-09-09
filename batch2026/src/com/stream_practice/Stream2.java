@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 package com.stream_practice;
 
 
@@ -179,19 +177,19 @@ public class Stream2 {
 //            }
 //        }
 //        return promotionList;
-       // flatmap
+        // flatmap
 
-       return shopList.stream()
-               .filter(s->shopName.equalsIgnoreCase(s.getName()))
-               .flatMap(s->s.getPromotionList().stream())
-               .collect(Collectors.toList());
+        return shopList.stream()
+                .filter(s->shopName.equalsIgnoreCase(s.getName()))
+                .flatMap(s->s.getPromotionList().stream())
+                .collect(Collectors.toList());
 
 
 
     }
 
     private static Set<Promotion> getAllFixedPromotion(List<Shop> shopList){
-            Set<Promotion> promotionList = new HashSet<>();
+        Set<Promotion> promotionList = new HashSet<>();
 
 //            for(Shop shop : shopList){
 //                for(Promotion promo : shop.getPromotionList()){
@@ -203,10 +201,10 @@ public class Stream2 {
 //
 //            return promotionList;
 
-            return shopList.stream()
-                    .flatMap(s->s.getPromotionList().stream())
-                    .filter(p->PromotionType.FIXED.equals(p.getPromotionType()))
-                    .collect(Collectors.toSet());
+        return shopList.stream()
+                .flatMap(s->s.getPromotionList().stream())
+                .filter(p->PromotionType.FIXED.equals(p.getPromotionType()))
+                .collect(Collectors.toSet());
 
 
     }
@@ -246,12 +244,6 @@ public class Stream2 {
 
 
 
+        return null;
     }
-
-
-
-
-
-
 }
->>>>>>> main
