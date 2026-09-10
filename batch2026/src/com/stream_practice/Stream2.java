@@ -37,7 +37,7 @@ public class Stream2 {
                 "D201",
                 ShopType.MAKEUP,
                 Floor.SECONDFLOOR,
-                Arrays.asList(promo4)));
+                Arrays.asList()));
 
         shopList.add(new Shop("BABA CITY",
                 "D202",
@@ -93,6 +93,7 @@ public class Stream2 {
 //            }
 //        }
 //        return result;
+
         return shopList.stream()
                 .filter(s -> shopType.equals(s.getShopType()))
                 .collect(Collectors.toList());
