@@ -7,7 +7,13 @@ public class Employee {
     private String department;
     private Double salary;
 
-    public Employee(Integer id, String name, String department, Double salary) {
+    public Employee(Integer id, String name, String department, Double salary)
+            throws InvalidSalaryException {
+
+        if (salary <= 0) {
+            throw new InvalidSalaryException("Salary must be greater than 0");
+        }
+
         this.id = id;
         this.name = name;
         this.department = department;
